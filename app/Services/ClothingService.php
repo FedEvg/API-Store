@@ -55,7 +55,7 @@ class ClothingService
             $colorIds  = $this->getColorIdsWithUpdate($colors);
             $sizeAndQuantityIds  = $this->getSizeAndQuantityIdsWithUpdate($sizesAndQuantity);
 
-            $clothing = Clothing::firstOrCreate($data);
+            $clothing->update($data);
 
             $clothing->colors()->sync($colorIds);
             $clothing->sizesAndQuantity()->sync($sizeAndQuantityIds);
