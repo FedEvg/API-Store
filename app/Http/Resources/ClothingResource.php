@@ -23,7 +23,7 @@ class ClothingResource extends JsonResource
             'category' => new CategoryResource($this->category),
             'catSize' => new CatSizeResource($this->catSize),
             'brand' => new BrandResource($this->brand),
-            'colors' => ColorResource::collection($this->color),
+            'colors' => ColorResource::collection($this->colors),
             'sizesAndQuantity' => SizeAndQuantityResource::collection($this->sizesAndQuantity),
         ];
     }

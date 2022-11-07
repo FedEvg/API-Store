@@ -31,6 +31,13 @@ class UpdateRequest extends FormRequest
             'category' => 'required',
             'catSize' => 'required',
             'brand' => 'required',
+
+            'colors' => 'required',
+            'colors.*.name' => 'string',
+
+            'sizesAndQuantity' => 'required',
+            'sizesAndQuantity.*.name' => 'string',
+            'sizesAndQuantity.*.quantity' => 'integer',
         ];
     }
 }

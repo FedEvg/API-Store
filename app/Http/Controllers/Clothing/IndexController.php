@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\ClothingResource;
 use App\Models\Clothing;
 
-class IndexController extends Controller
+class IndexController extends BaseController
 {
     public function __invoke()
     {

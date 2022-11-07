@@ -24,7 +24,7 @@ class StoreController extends Controller
 
     private function getCatSizeId($item)
     {
-        $catSize = !isset($item['id']) ? CatSize::query()->create($item) : CatSize::query()->find($item['id']);
+        $catSize = !isset($item['id']) ? CatSize::query()->firstOrCreate($item) : CatSize::query()->find($item['id']);
 
         return $catSize->id;
     }

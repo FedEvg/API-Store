@@ -17,7 +17,7 @@ class SizeResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'catSize' => new GenderResource($this->catSize),
+            'catSize' => new CatSizeResource($this->catSize),
         ];
     }
 }
