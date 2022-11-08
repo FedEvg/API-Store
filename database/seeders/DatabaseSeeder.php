@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Clothing;
+use App\Models\Color;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -22,7 +24,12 @@ class DatabaseSeeder extends Seeder
             BrandSeeder::class,
             ColorSeeder::class,
             CatSizeSeeder::class,
-            SizeSeeder::class
+            SizeSeeder::class,
+        ]);
+        Clothing::factory(10)->create();
+        $this->call([
+            ClothingColorSeeder::class,
+            ClothingSizeQuantitySeeder::class,
         ]);
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',

@@ -19,6 +19,7 @@ class ClothingResource extends JsonResource
             'name' => $this->name,
             'price' => $this->price,
             'discount' => $this->discount,
+            'discount_price' => $this->discount_price,
             'status_id' => $this->status_id,
             'category' => new CategoryResource($this->category),
             'catSize' => new CatSizeResource($this->catSize),

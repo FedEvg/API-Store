@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->integer('price')->nullable();
             $table->integer('discount')->nullable();
+            $table->integer('discount_price')->nullable();
             $table->unsignedSmallInteger('status_id')->default(0);
             $table->foreignId('category_id')->nullable()->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('cat_size_id')->nullable()->constrained()->onUpdate('cascade')->onDelete('cascade');

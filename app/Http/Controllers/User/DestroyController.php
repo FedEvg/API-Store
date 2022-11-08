@@ -6,12 +6,12 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\UserResource;
 use App\Models\User;
 
-class DestroyController extends Controller
+class DestroyController extends BaseController
 {
-    public function __invoke(User $gender)
+    public function __invoke(User $user)
     {
-        $gender->delete();
+        $user->delete();
 
-        return new UserResource($gender);
+        return new UserResource($user);
     }
 }

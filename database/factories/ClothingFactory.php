@@ -17,7 +17,14 @@ class ClothingFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => fake()->word().rand(0, 99),
+            'price' => fake()->numberBetween(300, 3000),
+            'discount' => 0,
+            'discount_price' => 0,
+            'status_id' => 0,
+            'category_id' => fake()->numberBetween(1, 4),
+            'cat_size_id' => 3,
+            'brand_id' => fake()->numberBetween(1, 10),
         ];
     }
 }

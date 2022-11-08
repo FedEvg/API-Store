@@ -16,6 +16,7 @@ class ClothingService
     {
         try {
             DB::beginTransaction();
+            $data['discount_price'] = $this->discountPrice($data['price'], $data['discount']);
             $data['category_id'] = $this->getCategoryId($data['category']);
             $data['cat_size_id'] = $this->getCatSizeId($data['catSize']);
             $data['brand_id'] = $this->getBrandId($data['brand']);
@@ -44,6 +45,7 @@ class ClothingService
     {
         try {
             DB::beginTransaction();
+            $data['discount_price'] = $this->discountPrice($data['price'], $data['discount']);
             $data['category_id'] = $this->getCategoryIdWithUpdate($data['category']);
             $data['cat_size_id'] = $this->getCatSizeIdWithUpdate($data['catSize']);
             $data['brand_id'] = $this->getBrandIdWithUpdate($data['brand']);
@@ -66,6 +68,17 @@ class ClothingService
             return $exception->getMessage();
         }
         return $clothing->fresh();
+    }
+
+    private function discountPrice($price, $discount){
+        if ($discount !== 0)
+        {
+            $discountPrice = $price - ($price * ($discount / 100));
+            $discountPrice = intval($discountPrice);
+        } else {
+            $discountPrice = $price;
+        }
+        return $discountPrice;
     }
 
     private function getCategoryId($item)

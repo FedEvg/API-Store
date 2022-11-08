@@ -16,16 +16,16 @@ class ColorSeeder extends Seeder
     public function run()
     {
         $colors = [
-            ['id' => 1,'name' => 'Red'],
-            ['id' => 2,'name' => 'Blue'],
-            ['id' => 3,'name' => 'Yellow'],
-            ['id' => 4,'name' => 'Green'],
-            ['id' => 5,'name' => 'Orange'],
-            ['id' => 6,'name' => 'Pink'],
-            ['id' => 7,'name' => 'Black'],
-            ['id' => 8,'name' => 'Grey'],
-            ['id' => 9,'name' => 'Brown'],
-            ['id' => 10,'name' => 'Silver'],
+            ['name' => 'Yellow'],
+            ['name' => 'Orange'],
+            ['name' => 'Red'],
+            ['name' => 'Pink'],
+            ['name' => 'Blue'],
+            ['name' => 'Green'],
+            ['name' => 'Silver'],
+            ['name' => 'Grey'],
+            ['name' => 'Black'],
+            ['name' => 'Brown'],
         ];
 
         DB::table('colors')->insert($colors);

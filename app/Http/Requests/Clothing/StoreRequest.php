@@ -27,6 +27,7 @@ class StoreRequest extends FormRequest
             'name' => 'required|string',
             'price' => 'required|integer',
             'discount' => 'required|integer',
+            'discount_price' => 'integer',
             'status_id' => 'required|integer',
             'category' => 'required',
             'catSize' => 'required',

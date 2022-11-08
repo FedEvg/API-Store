@@ -32,6 +32,11 @@ class Clothing extends Model
         ];
     }
 
+    public function fullName()
+    {
+        return $this->category->name." ".$this->brand->name." ".$this->name;
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class, 'category_id', 'id');
@@ -50,10 +55,5 @@ class Clothing extends Model
     public function sizesAndQuantity()
     {
         return $this->belongsToMany(Size::class, 'clothing_size_quantities', 'clothing_id', 'size_id');
-    }
-
-    public function fullName()
-    {
-        return $this->category->name." ".$this->brand->name." ".$this->name;
     }
 }
